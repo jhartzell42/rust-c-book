@@ -7,34 +7,28 @@
         * Develop in the open
         * https://twitter.com/pcwalton/status/1539112080590217217
     * Rust vs C++
-        * C++ tackles a lot of important problems
-            * List goals of C++ in some detail
-                * C is portable assembly language
-                     * But adds few abstractions
-                * C++ goal:
-                    * Zero-cost abstractions
-                    * Essential abstractions at minimal cost
-                * That is:
-                    * C levels of control
-                    * Automatic memory management
-                        * Without RC or GC
-                        * Fancy types without paying for it
-                    * Templates
-                * Follow overall outline of book as well
-        * C++ nevertheless has problems
-            * C++ is very old
-                * Lots of C legacy
-                * Lots of C++ legacy too
-                    * OOP is legacy
-                    * Refs vs pointers is legacy
-                * A new PL may just be needed every once in a while
-                * Rust can learn the lessons without being tied to the legacy
-            * UB is very hard to deal with
-                * Rust doesn't eliminate it
-                    * Still has C levels of control
-                * But does give tools for encapsulating/managing it
-                    * Not every line of code should have to grapple with it
-                    * Trusted safe abstractions
+        * Bjarne Stroustrup
+            * Quote is appealing, resonating
+                * C++ has many cool features
+                * C++ has features that step on those cool features toes
+            * Bjarne Stroustrup doesn't get to decide what the quote means
+                * If it resonated for us
+                * And we see a language that seems to match it
+                * Then we can apply that quote to that language
+                    * Without his permission
+                    * Over his objections
+        * A new PL may just be needed every once in a while
+            * Rust can learn the lessons without being tied to the legacy
+            * UB rules are insane
+        * Clear this up:
+            * Myth busting
+            * Rust doesn't eliminate it
+                * Still has C levels of control
+            * But does give tools for encapsulating/managing it
+                * Not every line of code should have to grapple with it
+                * Trusted safe abstractions
+    * Second intro chapter
+        * Called what though?
         * Some common objections to the Rust fandom
             * Utopianism in Programming Languages
                 * Clearly exists

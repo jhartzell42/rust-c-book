@@ -3,4 +3,7 @@ authors = ["Jimmy Hartzell"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Rust and C++"
+title = "Rust: C++ Rebooted"
+
+[output.html]
+default-theme = "coal"
