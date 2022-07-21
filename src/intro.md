@@ -220,11 +220,14 @@ moves. In general, Rust takes advantage of the fact that it doesn't have
 to also be C and also be old versions of C++, and uses it to create a
 much cleaner experiences.
 
-And that is what this book is about. This book is about how Rust has
-the goals of C++, many great ideas from C++, without many of the
-problems of C++. And since memory safety is an issue that has
-been discussed to death, and yelling about the borrow checker
-has become a stereotype, this book is almost entirely about
+And that is what this book is about.
+
+## This Book
+
+This book is about how Rust has the goals of C++, many great ideas from
+C++, without many of the problems of C++. And since memory safety is an
+issue that has been discussed to death, and yelling about the borrow
+checker has become a stereotype, this book is almost entirely about
 other specific differences between the two programming languages.
 
 The thesis of this book could thus be stated as follows:
@@ -233,4 +236,4 @@ The thesis of this book could thus be stated as follows:
 > while eliminating the cruft, which has far-reaching
 > benefits over remaining compatible with C++.
 
-## Dispelling Myths About `unsafe`
+This is more a persuasive document than an instructional document.
