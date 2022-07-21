@@ -27,9 +27,20 @@
             * But does give tools for encapsulating/managing it
                 * Not every line of code should have to grapple with it
                 * Trusted safe abstractions
-    * Second intro chapter
-        * Called what though?
+    * Second intro chapter: Personal Perspective
+        * What do I believe about Rust and C++?
+            * I like C++
+                * I think it's contributed a LOT to CS
+                * But it also had serious problems the entire time
+                    * Torvalds, Cantrill, C++ Infrequently Questioned Answers
+            * I think Rust will and should replace it
+                * Not in every project
+                * But as new projects are written
+                * As C++ has been replaced in other domains besides systems
+                * C++ will always be a legacy language
+                    * Too big not to be
         * Some common objections to the Rust fandom
+            * Myth-buster format!
             * Utopianism in Programming Languages
                 * Clearly exists
                 * Haskell

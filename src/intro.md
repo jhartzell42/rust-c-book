@@ -27,7 +27,7 @@ with C++.
 
 But what are those exactly?
 
-### The Essential Goal: Zero-Cost Abstractions
+### The Essential Goal: "Zero-Cost" Abstractions
 
 Well, let's start with the goals of C, as Rust still tries to uphold the
 goals of C (without the need to be tied to any literal source compatibility):
@@ -71,25 +71,25 @@ and slower than what a skilled C programmer would have it do.
 C++ has a genius solution to this: RAII. With RAII, the source code
 looks simpler than in C, and is harder to get wrong. It's not quite
 as straight-forward as in a garbage-collected language, but it has
-many of the benefits of abstraction. You can't just forget to call
+many of the benefits of abstraction: You can't just forget to call
 the destructor.
 
 But! From the compiled binary, modulo such nit-picky accidents as symbol
 names, you wouldn't be able to tell it was written in C++ instead of C!
 The abstraction was resolved and disappeared at compile-time.
 
-Similarly with templates, and therefore with the collections in the STL,
-and so many other C++ features.
+Similarly with templates, and therefore with the collections in the STL.
+Similarly with many other C++ features.
 
 And Rust has greatly benefitted from all of this innovation in C++.
 C++ is one of the giants on whose shoulders Rust stands. Rust inherits
 RAII from C++. Rust inherits templates as well, though it puts some
 constraints on them and calls them "monomorphization."
 
-Rust is also trying, and succeeding, at being the kind of programming
-language where the compiled binary looks like something someone could
-have written in C, but where the programmer actually had a much easier
-task.
+And Rust needs these, because Rust is also striving to be the kind of
+programming language where the compiled binary looks like something
+someone could have written in C, but where the programmer actually had
+a much easier task.
 
 ### OOP and Safety
 
@@ -173,7 +173,7 @@ If you need object-oriented programming, which is another goal of C++,
 then C++ might be your thing. I generally think object-oriented programming
 is overrated and Rust's way of handling abstraction to be both more powerful
 and less prone to problems, but many people disagree with me. Especially in
-GUI programming, OOP patterns are far more established, and Rust's
+GUI programming, OOP patterns are far more established in C++, and Rust's
 ecosystem is particularly behind in the GUI space.
 
 However, if you're worried about memory corruption and the related security
@@ -187,17 +187,38 @@ safe and which are unsafe. Rust is able to accomplish much more in its
 safe subset without performance degradation than the average C++ programmer
 might guess, because it has a more sophisticated type system.
 
+For a system's programming language, I think memory safety is more
+important than object-oriented programming and better GUI frameworks
+(for now). GUI apps, a long time ago, used to be written locally in C
+or C++ to run directly on the user's computer. Nowadays, they are more
+likely to be deployed over the web and written in Javascript, and
+even those apps that do run directly on the user's computer tend
+to be written in other, less systems-oriented programming languages.
+
+And over time, I suspect we'll find out that OOP isn't as
+necessary to GUI frameworks as we had thought. My [favorite GUI
+framework](https://reflex-frp.org/) personally is in Haskell
+and doesn't use OOP at all. And once that happens, I think OOP
+will simply be another legacy feature, as Rust's `trait` mechanism
+is superior to OOP for non-GUI contexts.
+
+Memory safety, on the other hand, is key for systems programs. Servers,
+OS kernels, real-time systems, automobile controllers, cryptocurrency
+wallets -- the domains where systems programming tends to be used are also
+domains in which security vulnerabilities are absolutely unacceptable.
+The fact that C++ doesn't have a safe subset, and makes it so
+difficult to reason about undefined behavior compared to idiomatic Rust,
+is a serious problem.
+
 But even if Rust didn't have a specific memory safety advantage over C++,
 it would still have quite a few things going for it. It avoids header
 files and all the concomittant confusion. It gets rid of null pointers
 in most contexts, called "the billion dollar mistake" by the inventor
 of null pointers himself. It tidies up compile-time polymorphism and
 brings it in line with run-time polymorphism. It has actual destructive
-moves.
-
-In general, Rust takes advantage of the fact that it doesn't have to
-also be C and also be old versions of C++, and uses it to create a much
-cleaner experiences.
+moves. In general, Rust takes advantage of the fact that it doesn't have
+to also be C and also be old versions of C++, and uses it to create a
+much cleaner experiences.
 
 And that is what this book is about. This book is about how Rust has
 the goals of C++, many great ideas from C++, without many of the
@@ -208,6 +229,8 @@ other specific differences between the two programming languages.
 
 The thesis of this book could thus be stated as follows:
 
->Rust gets rid of the legacy cruft of C++, and keeps the good parts.
+> Rust accomplishes the essential goals of C++ and keeps the good ideas,
+> while eliminating the cruft, which has far-reaching
+> benefits over remaining compatible with C++.
 
 ## Dispelling Myths About `unsafe`
