@@ -6,95 +6,6 @@
         * Write new content
         * Develop in the open
         * https://twitter.com/pcwalton/status/1539112080590217217
-    * Rust vs C++
-        * Bjarne Stroustrup
-            * Quote is appealing, resonating
-                * C++ has many cool features
-                * C++ has features that step on those cool features toes
-            * Bjarne Stroustrup doesn't get to decide what the quote means
-                * If it resonated for us
-                * And we see a language that seems to match it
-                * Then we can apply that quote to that language
-                    * Without his permission
-                    * Over his objections
-        * A new PL may just be needed every once in a while
-            * Rust can learn the lessons without being tied to the legacy
-            * UB rules are insane
-        * Clear this up:
-            * Myth busting
-            * Rust doesn't eliminate it
-                * Still has C levels of control
-            * But does give tools for encapsulating/managing it
-                * Not every line of code should have to grapple with it
-                * Trusted safe abstractions
-    * Second intro chapter: Personal Perspective
-        * What do I believe about Rust and C++?
-            * I like C++
-                * I think it's contributed a LOT to CS
-                * But it also had serious problems the entire time
-                    * Torvalds, Cantrill, C++ Infrequently Questioned Answers
-            * I think Rust will and should replace it
-                * Not in every project
-                * But as new projects are written
-                * As C++ has been replaced in other domains besides systems
-                * C++ will always be a legacy language
-                    * Too big not to be
-        * Some common objections to the Rust fandom
-            * Myth-buster format!
-            * Utopianism in Programming Languages
-                * Clearly exists
-                * Haskell
-                    * To Kata Haskellen Evangelion
-                * Rust
-                * However, the opposite is also false
-                    * It's not the case that all tools are equal
-                    * Shouldn't blame things on laziness learning the tool
-                        * Or learning the many rules around it
-                        * This might make sense for individuals
-                            * But very bad corporate policy
-            * Young enthusiastic people
-                * But Torvalds, Cantrill...
-                * Many have disliked C++ the whole time, like Rust
-            * Tu quoque: Rust will have these problems in 40 years as well
-                * C++ will have even more then! And so?
-            * Not 100% memory safe
-                * Not the goal
-        * Meta-commentary on PL debates
-            * "You're just being lazy"
-                * Used in a variety of contexts
-                    * As a rebuttal to claims that PLs are too complicated
-                    * Or that you have to use best practices
-                    * Or that there's undefined behavior
-                * Unnecessary extra work is bad
-                    * It would be a better argument if there was a pay-off
-                    * But often, you can make it easier without making it worse
-                * Making programmers work harder is actually bad
-                    * Making programmers work harder makes code worse
-                    * Why should the programming language get in the way of actual work??
-                        * It distracts them from actually finding the problem
-                        * Can make bugs harder to see because of cognitive load
-                    * This isn't a manliness competition
-                * Programming is engineering, not art
-            * "A tool for every job"
-                * Different tools for different jobs, sure
-                * Some tools are just unilaterally worse than others
-                * These tools are all free! What are you complaining about?
-            * "It's a matter of personal preference"
-                * Most programming is done for a job
-                * Programmer comfort and familiarity is important
-                * Other things are too
-            * "Why care this much about programming language choice?"
-                * The stakes actually are high
-                * Security vulnerabilities
-            * You just have to use the best practices of that PL
-                * The more good practices can be enforced, the better
-                    * Many programming languages create constructs that are hard to use
-                        * To no upshot
-                * Best practices without warnings or errors are bad
-                    * Sometimes necessary
-                    * But often, there are too many
-            * All programming languages have dangerous constructs
-                * That doesn't mean they all are affected the same amount
     * Part I: Memory/Resource Management
         * Memory: What is C++ trying to solve?
             * C: Manual Memory Management
@@ -159,7 +70,7 @@
                 * Must have no outstanding borrows in order to move
         * Memory safety
             * Bring in from being fair about memory safety
-    * Part II: Compile-Time Polymorphism
+    * Part II: OOP and Compile-Time Polymorphism
     * Part III: Legacy
         * C legacy
             * Header files

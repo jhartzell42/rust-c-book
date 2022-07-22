@@ -216,13 +216,15 @@ files and all the concomittant confusion. It gets rid of null pointers
 in most contexts, called "the billion dollar mistake" by the inventor
 of null pointers himself. It tidies up compile-time polymorphism and
 brings it in line with run-time polymorphism. It has actual destructive
-moves. In general, Rust takes advantage of the fact that it doesn't have
+moves.
+
+In general, Rust takes advantage of the fact that it doesn't have
 to also be C and also be old versions of C++, and uses it to create a
 much cleaner experiences.
 
-And that is what this book is about.
-
 ## This Book
+
+And that is what this book is about.
 
 This book is about how Rust has the goals of C++, many great ideas from
 C++, without many of the problems of C++. And since memory safety is an
@@ -237,3 +239,210 @@ The thesis of this book could thus be stated as follows:
 > benefits over remaining compatible with C++.
 
 This is more a persuasive document than an instructional document.
+It's a work of apologetics, explaining in detail, topic by topic, why
+Rust is good at these goals it shares with C++, and why a new programming
+language was necessary to achieve them more effectively.
+
+Like most books of apologetics, it's nominally aimed at the skeptics,
+in this case the C++ developers who don't like Rust. But only nominally.
+It will be far more interesting for the seekers and the proselytes:
+Those who are interested in looking into Rust, or who have started
+using Rust, but aren't fully sure of its benefits over C++, or whether
+it can be truly used in as many ways as C++ can, or whether it can
+truly be as high-performance.
+
+We've known for some time that C++ was hampered by its C legacy.
+Today, modern C++ is also hampered by the legacy of pre-modern C++.
+
+Bjarne Stroustrup once said:
+
+> Within C++, there is a much smaller and cleaner language struggling
+> to get out.
+
+I'm sure Bjarne Stroustrup has already said that this quote was not
+about Rust, just as he a long time ago said that it wasn't about C#
+or Java. But I think it resonated with so many people because we all
+know how much cruft and complexity has accrued in C++. And the
+fact that the quote resonated so much I think says more about C++
+than whatever Bjarne's original intentions were.
+
+And so, even though Bjarne explicitly said otherwise, I think
+Java and C# were efforts to extract a smaller and cleaner language
+-- one that had C++-style object-oriented programming without the
+other bits that they considered the "cruft." And for a substantial
+slice of C++ programmers, who didn't need control of memory and
+could afford garbage collection, this is exactly what the doctor
+ordered: Many use cases of C# an Java today would've previously
+been filled by C++.
+
+Remember, C++ used to be a general-purpose programming language. Now, it's
+a niche systems programming languages. It has been edged out of
+other niches by programming languages that take what they like
+from it, and leave the rest, like Java and C#.
+
+And I think Rust is finishing the job. It is a similar effort, but with
+a different opinion about which bits constitute the "cruft." Zero-cost
+abstraction remains a goal, but C compatibility does not. One of the
+goals of this book is to convince you that this is the right decision.
+
+Which brings me to this book's secondary thesis:
+
+> With a few notable exceptions, I think Rust is the better language to
+> start a new project in. If you were going to write something new in C++,
+> I think you should almost always use Rust instead, or else another
+> programming language if it's outside of Rust/C++'s core niche.
+
+This is a corrolary of this book's primary thesis: if Rust has the same
+goals as C++, and accomplishes them just as well with fewer downsides
+and fewer costs, why would you use C++? In my opinion, the exceptions
+are already very limited, and will only decrease with time, until C++
+is only appropriate for -- and ultimately only used for -- legacy projects.
+
+Again, C++ is one of the giants on whose shoulders Rust stands. Without
+C++, Rust would've been impossible, just like Java and C# would've been
+impossible. But sometimes a clean, breaking re-design is required,
+and Rust provides that.
+
+## Addressing Common Tropes in the Rust/C++ Debate
+
+Before I get into the specific topics, though, I'd like to clear up
+a few talking points I've seen in the discourse. Some of these seem
+a little silly to me, but they're not exaggerations.
+
+> Rust fans all want to rewrite everything in Rust immediately
+as a panacea.
+
+Unfortunately, we have a vocal minority who do! But most Rust
+developers have a much more moderate perspective. Most are aware
+that a large project cannot and should not be rewritten lightly.
+
+> Rust is a fad
+
+Rust might be popular right now, but it also is already a part
+of a lot of critical infrastructure, and is currently being put
+in the Linux kernel.
+
+> Rust fans are all young and naive people with little real-life
+> programming experience
+
+Sure, there's fans of all languages who are like that.
+
+But there's also Bryan Cantrill embracing Rust after a
+lifetime of disliking C++. There's Linus Torvalds allowing it
+in the kernel, after his very vocal anti-C++ statements.
+
+There's a long tradition of people who like C, but don't like C++.
+See the [Frequently Questioned Answers](https://yosefk.com/c++fqa/) for
+a taste. Their criticisms are, in many cases, legitimate. This is
+unfortunate, because C has such limited capacity for abstraction,
+and so they're missing out on all the abstractive power that
+a higher-level language can provide.
+
+For some of these people, Rust addresses the most important criticisms.
+
+Personally, I agreed with many of those criticisms, personally, but was
+a professional C++ programmer for 5 years, working in positions where
+the zero-cost abstractions were absolutely necessary. I wasn't in a
+position to choose programming languages at the company where I was,
+but I agreed with the choice of C++ over C, in spite of what in my mind
+were the clear costs of overcomplexity. I enjoy Rust now because it
+addresses many of those problems.
+
+> But you must at least admit that Rust fans are annoying.
+
+Many of the ones that annoy you, annoy me too, if not more.
+
+I also know that I've annoyed C++ fans by advocating for Rust on the C++
+subreddit. My post was taken down by moderators as irrelevant to C++,
+but how could you be more relevant than a thorough critique?
+
+> Rust will be in the same place as C++ in 40 years
+
+First, if there needs to be a new systems language in another 30
+or 40 years that reboots Rust like Rust is rebooting C++, I don't
+see that as a failure. I certainly don't see that as a reason
+not to use Rust now.
+
+And maybe Rust will be in 40 years as messy as C++ is now. Probably C++
+will be even messier by then. Maybe C++ will clean up certain problems;
+probably Rust will help spur it to do so by means of competition.
+
+But also: Maybe Rust will be able to avoid some of C++'s mistakes;
+it's certainly trying to.
+
+> No programming language is better than another; there's simply
+> different tools for different jobs.
+
+I have a hard time taking this line of argument very seriously,
+and yet it comes up a lot. There are some tools for which almost
+no job is the right job. There are some tools that are just worse
+than other tools. No one uses VHS tapes anymore; there's no job
+for which they're the right tool.
+
+Programming languages are technology. Some technologies simply
+dominate others. There are currently still some things that the C++
+ecosystem has that Rust doesn't yet: I'm thinking about the GUI library
+space, and gcc support. Also, C++ has undeniably better interoperability
+with C, which is relevant.
+
+But both of those things might change. There is no natural reason why
+C++ and Rust would be on equal fitting, or why Rust wouldn't at some
+point in the future be better than C++ at literally every single thing
+besides support for legacy C++ codebases.  Some tools are simply better
+than others. No one's writing new production code in COBOL anymore;
+it's a bad tool for a new project.
+
+> C++ undefined behavior is avoidable if you're actually good at C++/if
+> you just try harder and learn the job skills. You just have to use
+> established best practices and a lot of problems go away.
+
+First off, my experience working at a low-latency C++ shop shows that
+that's not true. Avoiding undefined behavior in high-performance C++
+is extremely hard. It's hard in Rust too, but at least Rust gives
+you tools to manage this risk explicitly. If you're avoiding
+memory corruption errors in C++, you've either found a safe subset,
+or you're coding easy problems, or likely both.
+
+But even if there are use cases where this is true,
+to me that means that an experienced C++ programmer can be just
+as good at avoiding undefined behavior as a novice Rust programmer.
+So what does this mean for a business considering whether to use
+C++ or Rust? In C++ everything a junior programmer writes
+requires more scrutiny from senior programmers. Everyone requires
+more training and more time to do things correctly. It's not
+that good of a selling point.
+
+Similarly, using best practices makes it sound easy, or at least
+achievable. But the more complicated and arcane best practices are,
+and the higher the stakes of following them, the higher the cognitive
+load on the programmers, and again, the more you need senior programmers
+to look over everyone else's work or even do parts of the work themselves.
+
+When we've been doing something the hard way for a long time,
+and it's successful, it's tempting to see other people struggling
+and to tell them it's not that hard, that they can just up
+their knowledge and their work ethic and do it the hard way
+like us. But in the end, everyone benefits if the work is just easier
+with better tools.
+
+And what's a better tool than a "best practice"? An error message.
+A lint. A programming language structured in such a way that it
+doesn't even come up.
+
+> Programming language is a matter of personal preference.
+
+For your hobby project, sure, this is true. But there are real differences
+between programming languages in terms of many things that matter for
+business purposes.
+
+> The existence of `unsafe` defeats the purpose of Rust. You have
+> to use `unsafe`, and since the standard library uses it, you're almost
+> certainly using it too. That makes Rust unsafe just like C++ in practice,
+> and so there's no advantage to switching.
+
+> Safety means that Rust is not as high-performance
+
+> All programming languages have foot-guns.
+
+Some have more than others. In some you run across them more
+frequently than others. And in some, they come with a safety.
