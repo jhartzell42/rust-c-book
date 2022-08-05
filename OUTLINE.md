@@ -1,8 +1,7 @@
 * C++ vs Rust Book (don't actually PUBLISH publish, just maintain online)
-    * "C++ to Rust"
     * Plan:
-        * Draw from blog posts
-            * Reorganize into this outline
+        * Move outline into book sections
+        * Draw also from blog posts
         * Write new content
         * Develop in the open
         * https://twitter.com/pcwalton/status/1539112080590217217

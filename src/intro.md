@@ -440,7 +440,56 @@ business purposes.
 > certainly using it too. That makes Rust unsafe just like C++ in practice,
 > and so there's no advantage to switching.
 
+I would call this a straw man, but people do call Rust a "safe"
+programming language, and some people say you should never have to use
+`unsafe` (which I disagree with). So this takes some addressing.
+
+First of all, memory safety, while important, is not the only
+purpose of Rust. I would switch to Rust even if it didn't have the
+`unsafe` keyword. There are many other problems about C++, and this
+book focuses on the other problems.
+
+Second of all, in every memory-safe language, safe abstractions are
+built from unsafe foundations.  You have to -- assembly language is
+unsafe. `unsafe` allows those foundations to be written in Rust.
+
+You can't both have the guard rails that Rust provides
+and write certain types of high-performance code, but the `unsafe`
+keyword allows you to make the decision on whether to have your cake
+or eat it on a situation-by-situation basis, rather than giving up
+one or the other for the entire programming language.
+
+If you don't use `unsafe`, and you trust the libraries you import, then
+you're in a safe language. If you do use `unsafe`, you are temporarily
+in a language as flexible as C++, while still having many advantages of
+Rust. Use it to build more safe components, and expand the safe language,
+and you get to only worry about safety a small percentage of the time,
+as opposed to all the time in C++.
+
+> Rust is taking the easy way out.
+
+Who wouldn't want to take the easy way out? Do you exit your house
+by climbing through the windows? This phrase only makes sense when
+there's a downside, in which case the response depends on the alleged
+downside. But all in all, businesses *should* use programming languages
+that make programming easier.
+
 > Safety means that Rust is not as high-performance
+
+It's true that some operations in Rust are checked by default which
+are unchecked by default in C++. Array indexing is the typical example.
+
+However, both checked and unchecked indexing are available in both
+Rust and C++. The difference is in Rust, to use the unchecked one,
+you have to use a named method and an `unsafe` block. This is easy
+enough to do in situations where indexing matters.
+
+Most code is not the tight loops in performance-sensitive parts of
+performance-sensitive code. Most code by volume is configuration
+and other situations where the check is well worth it to prevent
+the possibility of memory corruption. Rust does make a less performant
+default decision than C++, but it is not that hard to override, and
+then you still get all the other benefits of Rust.
 
 > All programming languages have foot-guns.
 
