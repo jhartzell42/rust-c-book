@@ -5,7 +5,7 @@
 Rust is a fresh attempt at accomplishing the most essential of C++'s goals.
 
 In order to accomplish these essential goals well, Rust ends up ignoring
-some of the other ones.  C++ has a lot of goals, and they distract from
+some of the other ones. C++ has a lot of goals, and they distract from
 each other.  The biggest goal that Rust drops from C++ is, of course:
 
 * Be compatible with earlier versions of C++
@@ -83,8 +83,8 @@ Similarly with many other C++ features.
 
 And Rust has greatly benefitted from all of this innovation in C++.
 C++ is one of the giants on whose shoulders Rust stands. Rust inherits
-RAII from C++. Rust inherits templates as well, though it puts some
-constraints on them and calls them "monomorphization."
+RAII from C++. Rust inherits the core idea of templates as well, though
+it puts some constraints on them and calls them "monomorphization."
 
 And Rust needs these, because Rust is also striving to be the kind of
 programming language where the compiled binary looks like something
@@ -447,32 +447,51 @@ programming language, and some people say you should never have to use
 First of all, memory safety, while important, is not the only
 purpose of Rust. I would switch to Rust even if it didn't have the
 `unsafe` keyword. There are many other problems about C++, and this
-book focuses on the other problems.
+book focuses primarily on the other problems.
 
-Second of all, in every memory-safe language, safe abstractions are
+Second of all, in every "memory-safe" language, safe abstractions are
 built from unsafe foundations.  You have to -- assembly language is
 unsafe. `unsafe` allows those foundations to be written in Rust.
+And that is what a memory safe language is, not one that is 100%
+memory safe in all situations, but one in which it's possible to
+explicitly manage and scope memory safety, and do most regular
+tasks in the safe subset.
 
-You can't both have the guard rails that Rust provides
-and write certain types of high-performance code, but the `unsafe`
-keyword allows you to make the decision on whether to have your cake
-or eat it on a situation-by-situation basis, rather than giving up
-one or the other for the entire programming language.
+You can't both have the guard rails that Rust provides and write certain
+types of high-performance code at the same time, but the `unsafe`
+keyword allows you to make the decision on whether to have your cake or
+eat it on a situation-by-situation basis, rather than giving up one or
+the other for the entire programming language.
 
 If you don't use `unsafe`, and you trust the libraries you import, then
 you're in a safe language. If you do use `unsafe`, you are temporarily
 in a language as flexible as C++, while still having many advantages of
-Rust. Use it to build more safe components, and expand the safe language,
-and you get to only worry about safety a small percentage of the time,
-as opposed to all the time in C++.
+Rust -- including safety features, which are still fully in place for
+most programming constructs even in `unsafe` blocks.
 
-> Rust is taking the easy way out.
+Use the `unsafe` code to build more safe components, and expand the safe
+language, and you get to only worry about safety a small percentage of
+the time, as opposed to all the time in C++.
 
-Who wouldn't want to take the easy way out? Do you exit your house
-by climbing through the windows? This phrase only makes sense when
-there's a downside, in which case the response depends on the alleged
-downside. But all in all, businesses *should* use programming languages
-that make programming easier.
+> Rust is taking the easy way out. Or: You can do C++ well, you just
+> have to work harder at it, so there's no point to Rust.
+
+I do think people regularly underestimate their ability to write safe C++.
+Other people underestimate how much performance they're giving up on by
+making sure they're confident their C++ is safe.
+
+But even if you have put in the work to be good at writing C++ safely,
+why does that mean that someone else shouldn't be happy to get the same
+results with less training and less work, if the technology exists?
+
+Who wouldn't want to take the easy way out? Do you exit your house by
+climbing through the windows? This phrase only makes sense when there's
+a downside, in which case the response depends on the alleged downside.
+In which case, the actual downside is more important than this rhetorical
+trick.
+
+Because, after all, businesses *should* use programming languages that
+make programming easier.
 
 > Safety means that Rust is not as high-performance
 
