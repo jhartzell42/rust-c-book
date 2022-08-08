@@ -6,10 +6,14 @@
 
 - [The Problem: Manual Memory Management]()
 - [The Solution: RAII]()
-- [Pointers and References]()
-    - [Null Pointers]()
+- [Unowned Memory]()
+    - [Pointers and References]()
     - [Slices]()
-- [Iterators and Map Entries]()
+    - [Iterators]()
+    - [Map Entries]()
+- [Other Memory Safety]()
+    - [Null Pointers]()
+    - [Indexing]()
 - [Moves]()
 
 # Function Interfaces
@@ -23,11 +27,13 @@
 - [Templates vs Monomorphization]()
 - [OOP]()
 
-# C Legacy
+# Legacy
 
 - [Header Files]()
     - [Templates and Header Files]()
-- [C-Style Arrays]()
+- [Old Features]()
+    - [C-Style Arrays]()
+    - [Raw Pointers]()
 
 # Safety
 

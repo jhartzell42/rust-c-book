@@ -514,3 +514,7 @@ then you still get all the other benefits of Rust.
 
 Some have more than others. In some you run across them more
 frequently than others. And in some, they come with a safety.
+
+> Modern C++ fixes the problems with C++.
+
+TODO
