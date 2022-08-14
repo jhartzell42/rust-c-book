@@ -110,9 +110,11 @@ equivalent to those a C programmer would make.
 
 For most of C++'s history, OOP was an essential convenience of a
 high-level programming language. Everyone's buzzwordy design patterns were
-conceptualized in OOP. It was a low-level decision to make it optional,
-to allow C-style code organization.  It was a low-level decision to make
-`virtual` opt-in.
+conceptualized in OOP. It was a low-level distinctive to make it optional,
+to even allow C-style, non-OOP code organization. It was a low-level
+distinctive to make `virtual` opt-in; not having it at all would've
+disqualified C++ as an application programming language at all. It
+was considered necessary for usable abstractions.
 
 And throughout much of this time as well, C programmers *were* creating
 similar code to this! It was very popular to write structs of function
@@ -123,7 +125,10 @@ For Rust, memory safety is an essential convenience of a high-level
 programming language. Unlike a Java or a Haskell, the goal isn't so much
 being a memory-safe programming language as having a memory safe subset
 and encouraging memory-safe abstractions around unsafe code. It was a
-compromise to allow `unsafe` and raw pointers at all.
+low-level distinctive to have `unsafe` and raw pointers at all, not
+having them protected by a keyword would've disqualified Rust, in 2015,
+from being an application programming language at all. Protections
+for safety are now considered necessary for usable abstractions.
 
 And even in C, the trend has gotten more towards linting and using
 machines to verify safety, and leaving more checks in. I worked on a C
@@ -144,13 +149,13 @@ good abstraction.
 So C++ and Rust both share the same essential goals:
 
 * The C goal: Be portable while exposing the full power of assembly
-language
+language.
 * The C++ goal: Have modern, high-level programming language features
 while still outputting code as good as what an assembly language
-programmer would write
+programmer would write.
 
 So if these goals appeal to you as a software developer, which
-programming language should you use?
+programming language should you use, Rust or C++?
 
 In my mind, that depends then either on the non-essential goals, or else
 just the accidents of history and ecosystem.
@@ -161,20 +166,21 @@ of being compatible with previous versions of C++. Similarly if there's
 a C++ library that turns out to be the perfect match, that may make your
 decision for you.
 
-Strangely enough, it's similar in the other direction if you already have
+But to be clear, it's similar in the other direction if you already have
 a large Rust codebase -- there's just fewer people in that position. This
-will probably change over time, though. I think it's already begun to
-be true of the ecosystem, though.
+will probably change over time, though. I think Rust's ecosystem is
+already competitive with C++.
 
 I think discussing the goals is more interesting, however, especially in
 the long term.
 
-If you need object-oriented programming, which is another goal of C++,
-then C++ might be your thing. I generally think object-oriented programming
-is overrated and Rust's way of handling abstraction to be both more powerful
-and less prone to problems, but many people disagree with me. Especially in
-GUI programming, OOP patterns are far more established in C++, and Rust's
-ecosystem is particularly behind in the GUI space.
+If you need object-oriented programming, which is another goal of
+C++, then C++ might be your thing. I generally think object-oriented
+programming is overrated and Rust's way of handling abstraction to be
+both more powerful and less prone to problems, but many people disagree
+with me. And I must admit: the big use case everyone always mentions for
+OOP is GUI programming, and Rust's ecosystem is particularly behind in
+the GUI space.
 
 However, if you're worried about memory corruption and the related security
 vulnerabilities, it might be nice to have a guarantee that only certain
@@ -189,11 +195,15 @@ might guess, because it has a more sophisticated type system.
 
 For a system's programming language, I think memory safety is more
 important than object-oriented programming and better GUI frameworks
-(for now). GUI apps, a long time ago, used to be written locally in C
-or C++ to run directly on the user's computer. Nowadays, they are more
-likely to be deployed over the web and written in Javascript, and
-even those apps that do run directly on the user's computer tend
+(for now). GUI apps, a long time ago, used to be written locally in
+C or C++ to run directly on the user's computer. Nowadays, they are
+more likely to be deployed over the web and written in Javascript,
+and even those apps that do run directly on the user's computer tend
 to be written in other, less systems-oriented programming languages.
+If you're writing a GUI app, the choice for the part of the app that
+the user interacts with isn't between Rust and C++; it's between Rust,
+C++, C#, Java, JavaScript, and many others. Neither Rust or C++ stand
+much of a chance in the GUI space long-term.
 
 And over time, I suspect we'll find out that OOP isn't as
 necessary to GUI frameworks as we had thought. My [favorite GUI
@@ -517,4 +527,4 @@ frequently than others. And in some, they come with a safety.
 
 > Modern C++ fixes the problems with C++.
 
-TODO
+* TODO Write this

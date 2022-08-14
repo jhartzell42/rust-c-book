@@ -5,6 +5,7 @@
         * Write new content
         * Develop in the open
         * https://twitter.com/pcwalton/status/1539112080590217217
+
     * Part I: Memory/Resource Management
         * Memory: What is C++ trying to solve?
             * C: Manual Memory Management
@@ -97,3 +98,8 @@ Old material:
         * You sometimes mean the other one
             * `const T &`
             * `std::stay`
+* C as portable assembly?
+    * The importance of a C ABI
+        * Programmers' PC Sourcebook
+        * Seeing the register assignments for EACH call
+        * Quite tedious

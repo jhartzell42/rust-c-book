@@ -4,37 +4,31 @@
 
 # Memory Management
 
-- [The Problem: Manual Memory Management]()
-- [The Solution: RAII]()
-- [Unowned Memory]()
-    - [Pointers and References]()
-    - [Slices]()
-    - [Iterators]()
-    - [Map Entries]()
-- [Other Memory Safety]()
-    - [Null Pointers]()
-    - [Indexing]()
-- [Moves]()
+- [RAII: GC without GC](./memory/raii.md)
+- [Unowned Memory](./memory/unowned.md)
+    - [Pointers and References](./memory/refs.md)
+    - [Slices](./memory/slices.md)
+    - [Iterators](./memory/iter.md)
+    - [Map Entries](./memory/entries.md)
+- [Other Memory Safety](./memory/other.md)
+    - [Null Pointers](./memory/null.md)
+    - [Indexing](./memory/index.md)
+- [Moves](./memory/moves.md)
 
 # Function Interfaces
 
-- [Call Site Lack of Clarity]()
-- [Overloading]()
-- [Error Handling and Exceptions]()
+- [Call Site Lack of Clarity](./function/call-site.md)
+- [Overloading](./function/overloading.md)
+- [Error Handling and Exceptions](./function/errors.md)
 
 # Polymorphism
 
-- [Templates vs Monomorphization]()
-- [OOP]()
+- [Templates vs Monomorphization](./templates.md)
+    - [Concepts](./concepts.md)
+- [OOP](./oop.md)
 
 # Legacy
 
-- [Header Files]()
-    - [Templates and Header Files]()
-- [Old Features]()
-    - [C-Style Arrays]()
-    - [Raw Pointers]()
-
-# Safety
-
-- [Safety]()
+- [Raw Pointers](./legacy/raw-ptrs.md)
+- [C-Style Arrays](./legacy/arys.md)
+- [Header Files](./legacy/headers.md)
