@@ -1,11 +1,10 @@
 # RAII: GC without GC
 
 I don't want you to think of me as a hater of C++. In spite of the fact
-that I've been writing a [Rust vs C++ blog series](/tags/rust-vs-c++/)
-in Rust's favor (in which this post is the latest installment), I am very
-aware that Rust as it exists would never have been possible without C++.
-Like all new technology and science, Rust stands on the shoulders of
-giants, and many of those giants contributed to C++.
+that this book itself is a comparison between Rust and C++ in Rust's
+favor, I am very aware that Rust as it exists would never have been
+possible without C++.  Like all new technology and science, Rust stands
+on the shoulders of giants, and many of those giants contributed to C++.
 
 And this makes sense if you think about it. Rust and C++ have very similar
 goals. The C++ community has done a lot over all these years to pioneer
@@ -20,12 +19,11 @@ for resource management. And while RAII is for managing all kinds of
 resources, its biggest use case is as part of a compile-time alternative
 to run-time garbage collection and reference counting.
 
-As an alternative to garbage collection, RAII has deficits.
-While many allocations are created and freed neatly in line with
-variables coming in and out of scope, sometimes that's not
-possible. To fully compete with garbage collection and
-capture the diverse ways programs use the heap, RAII
-needs to be combined with other features.
+As an alternative to garbage collection, RAII has deficits.  While many
+allocations are created and freed neatly in line with variables coming in
+and out of scope, sometimes that's not possible. To fully compete with
+garbage collection and capture the diverse ways programs use the heap,
+RAII needs to be combined with other features.
 
 And C++ has done a lot of this. C++ added move semantics in C++11,
 which Rust also has -- though cleaner in Rust because Rust was
@@ -79,11 +77,6 @@ But before I get into the weeds, I have some important caveats:
 
 # The Problem: Manual Memory Management is Hard, GC is "Slow"
 
-> Caveat: To be clear, "slow" here is an oversimplification, and I address
-> that more later. I mean it as a tongue-in-cheek way of saying that
-> it has performance costs, whereas Rust and C++ try to adhere
-> to a *zero*-cost principle.
-
 So. C-style manual memory management -- "just call `free` when you're
 done with the allocation" -- is error prone.
 
@@ -116,6 +109,11 @@ for almost all modern programming languages, this run-time cost is well
 worth not troubling the programmer with the error-prone tedious tasks
 of C-style manual memory management, enabling memory safety and resource
 efficiency at the same time.
+
+> Caveat: To be clear, "slow" here is an oversimplification, and I address
+> that more later. I mean it as a tongue-in-cheek way of saying that
+> it has performance costs, whereas Rust and C++ try to adhere
+> to a *zero*-cost principle.
 
 ## GC (including RC) Has Costs
 
@@ -506,8 +504,8 @@ definition is very different than what moves are actually used for
 (cf. the name of the operation), and therefore, even though it is
 [technically simple](https://herbsutter.com/2020/02/17/move-simply/),
 claiming that focusing on that definition (as Herb Sutter does) will
-simplify things for the programmer is disingenuous, as I discuss in my
-post on [move semantics](/posts/cpp-move/).
+simplify things for the programmer is disingenuous, as I discuss in more
+detail in the next chapter on moves specifically.
 
 In practice, this means that all types support the operation of moving --
 even `int`s -- but even some types that manage an allocation might fall

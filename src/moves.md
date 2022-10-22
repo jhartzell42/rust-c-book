@@ -1,27 +1,15 @@
 # Moves
 
-This post is part of my [series](/tags/rust-vs-c++/)
-comparing C++ to Rust, which I introduced
-with a [discussion of C++ and Rust syntax](/posts/hello-rust/). In
-this post, I discuss move semantics. This post is framed around the
-way moves are implemented in C++, and the fundamental problem with
-that implementation, With that context, I shall then explain how Rust
-implements the same feature. I know that move semantics in Rust are often
-confusing to new Rustaceans -- though not as confusing as move semantics
-in C++ -- and I think an exploration of how move semantics work in C++
-can be helpful in understanding why Rust is designed the way it is,
-and why Rust is a better alternative to C++.
+As we discussed in the previous chapter, moves are an essential part of an
+RAII-based system of memory management, allowing RAII-controlled types to
+have multiple owners in the course of their lifetime. In this chapter,
+we discuss moves outside of that context and provide an alternative
+justification for why they're important. We then go into a little more
+depth about why C++ moves can be confusing, and explain how the Rust
+implementation has fewer footguns and in general is more in line with
+the goals of the feature.
 
-I am by far not the first person to discuss this topic, but I intend:
-
- * to discuss it thoroughly enough to contribute to the conversation
- * to nevertheless discuss it in such a way that those
-   familiar with systems programming, but unfamiliar with either C++
-   or move semantics, can understand it, starting from first principles
-
-## Modern C++
-
-First, some background.
+## History
 
 In 2011, C++ finally fixed a set of long-standing deficits in the
 programming language with the shiny new C++11 standard, bringing it into
@@ -40,7 +28,7 @@ especially for people like me who came from functional programming, but
 to be honest, closures were just syntactic sugar for existing patterns
 of boilerplate that could be readily used to write function objects.
 
-Indeed, the real excitement at the time, certainly the one my colleagues
+But the real excitement at the time, certainly the one my colleagues
 and I were most excited about, was move semantics. To explain why this
 feature was so important, I'll need to talk a little about the C++
 object model, and the problem that move semantics exist to solve.

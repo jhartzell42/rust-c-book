@@ -1,21 +1,22 @@
 # Entries
 
-For my next entry in my [series](/tags/rust-vs-c++/) comparing Rust
-to C++, I will be discussing a specific data structure API: the Rust
-map API. Maps are often one of the more awkward parts of a collections
-library, and the Rust map API is top-notch, especially its
-[entry API](https://doc.rust-lang.org/book/ch08-03-hash-maps.html?highlight=entry#only-inserting-a-value-if-the-key-has-no-value) -- I literally squealed
-when I first learned about entries.
+In this chapter, I will be discussing a specific
+data structure API: the Rust map API. Maps are
+often one of the more awkward parts of a collections
+library, and the Rust map API is top-notch, especially its [entry
+API](https://doc.rust-lang.org/book/ch08-03-hash-maps.html?highlight=entry#only-inserting-a-value-if-the-key-has-no-value)
+-- I literally squealed when I first learned about entries.
 
 And as we shall discuss, this isn't just because Rust made better choices
 than other standard libraries when designing the maps API. Even more so,
 it's because the Rust programming language provides features that better
 expresses the concepts involved in querying and mutating maps. Therefore,
-this serves as a window into some deep differences between C++ and Rust
-that show why Rust is better.
+this chapter is properly included in this book: this discussion serves
+as a window into some deep differences between C++ and Rust that show
+why Rust is better.
 
-And for this post, specifically, we'll also be discussing Java, so
-this will be a three-way comparison, between Java, C++ and Rust.
+And for this chapter, specifically, we'll also be discussing Java,
+so this will be a three-way comparison, between Java, C++ and Rust.
 
 ## Reading from a Map
 
