@@ -1,34 +1,35 @@
 # Summary
 
 [Introduction](./intro.md)
+[Common Complaints about Rust](./complaints.md)
 
-# Memory Management
 
-- [RAII: GC without GC](./memory/raii.md)
-- [Unowned Memory](./memory/unowned.md)
-    - [Pointers and References](./memory/refs.md)
-    - [Slices](./memory/slices.md)
-    - [Iterators](./memory/iter.md)
-    - [Map Entries](./memory/entries.md)
-- [Other Memory Safety](./memory/other.md)
-    - [Null Pointers](./memory/null.md)
-    - [Indexing](./memory/index.md)
-- [Moves](./memory/moves.md)
+# Memory
 
-# Function Interfaces
+- [RAII: GC without GC](./raii.md)
+- [Moves](./moves.md)
+- [Borrows](./borrows.md)
+- [Slices](./slices.md)
+- [Iterators](./iter.md)
+- [Entries](./entries.md)
 
-- [Call Site Lack of Clarity](./function/call-site.md)
-- [Overloading](./function/overloading.md)
-- [Error Handling and Exceptions](./function/errors.md)
+# Safety
+- [Safety and Performance](./safety.md)
+- [Limitations of Safety (and why that's OK)](./safe-limits.md)
 
-# Polymorphism
+# Better Type Systems
+- [Option over Null](./null.md)
+- [Result over Exception](./result.md)
+- [Enums over Polymorphism](./enums.md)
+- [Traits over Polymorphism (Run-Time)](./traits.md)
+- [Traits over Polymorphism (Compile-Time)](./traits.md)
 
-- [Templates vs Monomorphization](./templates.md)
-    - [Concepts](./concepts.md)
-- [OOP](./oop.md)
+# Functions
+- [Overloading: Overrated](./overloading.md)
+- [References vs Pointers vs Returning](./signatures.md)
 
 # Legacy
 
-- [Raw Pointers](./legacy/raw-ptrs.md)
-- [C-Style Arrays](./legacy/arys.md)
-- [Header Files](./legacy/headers.md)
+- [Headers](./headers.md)
+- [Pointers: Raw or Smart](./ptrs.md)
+- [Arrays](./arrays.md)

@@ -527,4 +527,10 @@ frequently than others. And in some, they come with a safety.
 
 > Modern C++ fixes the problems with C++.
 
-* TODO Write this
+Modern C++ has all the bad features of pre-modern C++. It
+has to, to be compatible with it.
+
+In my experience, it's not enough to have good features. To make promises
+about memory safety, or even to have a sane programming ecosystem,
+it's also important to not have bad features. And redundant features of
+varying quality are often the worst of both worlds.
