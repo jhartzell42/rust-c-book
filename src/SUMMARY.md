@@ -23,8 +23,8 @@
 - [Option over Null](./null.md)
 - [Result over Exception](./result.md)
 - [Enums over Polymorphism](./enums.md)
-- [Traits over Polymorphism (Run-Time)](./traits.md)
-- [Traits over Polymorphism (Compile-Time)](./traits.md)
+- [Traits over Polymorphism (Run-Time)](./traits-rt.md)
+- [Traits over Polymorphism (Compile-Time)](./traits-compile.md)
 
 # Functions
 
