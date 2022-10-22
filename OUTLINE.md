@@ -1,18 +1,20 @@
 Plan:
-* Fill in outline with mostly existing material
-    * Write rest, starting with OOP blog post
-        * Either post now or wait until it's done
+* Write damn thing
+    * Mostly with existing material
 * Convert to Sphinx project
     * Get Google Analytics integration?
 * Post, make announcement post
     * Along with OOP post?
 
-Outline:
+Specifically:
 * Common Goals of Rust and C++ (Old book intro)
-* What’s truly up with safety?
-    * Address bad faith arguments.
-        * Safety only covers what the Rust compiler says is safe
-        * Memory leaks were considered a safety issue before, are not now
+    * Split old book intro into two docs
+    * Objections doc will be important, can be maintained separately
+        * Might grow into its own thing
+        * Address more bad faith arguments.
+            * https://lwn.net/Articles/907685/
+            * Safety only covers what the Rust compiler says is safe
+            * Memory leaks were considered a safety issue before, are not now
 * Safety and Performance (/posts/unsafe/)
 * Exceptions/error handling
     * /posts/multiparadigm/
