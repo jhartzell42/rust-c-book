@@ -1,4 +1,7 @@
 Plan:
+* Revise blog posts that were literally copied in
+    * Try to make it a little more coherent
+    * Replace references to blog series with references to book :-)
 * Write damn thing
     * Mostly with existing material
 * Convert to Sphinx project
