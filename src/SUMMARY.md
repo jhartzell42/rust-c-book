@@ -7,9 +7,7 @@
 
 - [RAII: GC without GC](./raii.md)
 - [Moves](./moves.md)
-- [Borrows](./borrows.md)
-- [Slices](./slices.md)
-- [Iterators](./iter.md)
+- [Borrows: References, Slices, and Iterators](./borrows.md)
 - [Entries](./entries.md)
 
 # Safety
