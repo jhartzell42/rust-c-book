@@ -1,10 +1,11 @@
 # Common Complaints about Rust
 
-Before I get into the specific topics, though, I'd like to clear up and
-respond to a few anti-Rust talking points I've seen in the discourse.
+Before I get into the specific topics, though, I'd like to clear up
+a few talking points I've seen in the discourse. Some of these seem
+a little silly to me, but they're not exaggerations.
 
 > Rust fans all want to rewrite everything in Rust immediately
-as a panacea.
+> as a panacea.
 
 Unfortunately, we have a vocal minority who do! But most Rust
 developers have a much more moderate perspective. Most are aware
@@ -79,12 +80,12 @@ ecosystem has that Rust doesn't yet: I'm thinking about the GUI library
 space, and gcc support. Also, C++ has undeniably better interoperability
 with C, which is relevant.
 
-But both of those things might change. There is no natural reason why
-C++ and Rust would be on equal fitting, or why Rust wouldn't at some
-point in the future be better than C++ at literally every single thing
-besides support for legacy C++ codebases.  Some tools are simply better
-than others. No one's writing new production code in COBOL anymore;
-it's a bad tool for a new project.
+But those things might change. There is no natural reason why C++ and
+Rust would be on equal fitting, or why Rust wouldn't at some point in
+the future be better than C++ at literally every single thing besides
+support for legacy C++ codebases. Some tools are simply better than
+others. No one's writing new production code in COBOL anymore; it's a
+bad tool for a new project.
 
 > C++ undefined behavior is avoidable if you're actually good at C++/if
 > you just try harder and learn the job skills. You just have to use
