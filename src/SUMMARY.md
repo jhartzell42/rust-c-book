@@ -2,6 +2,7 @@
 
 [Introduction](./intro.md)
 [Common Complaints about Rust](./complaints.md)
+[Where Rust is Behind](./behind.md)
 
 # Memory
 
@@ -20,18 +21,16 @@
 
 - [Option over Null](./null.md)
 - [Result over Exception](./result.md)
-- [Enums over Polymorphism](./enums.md)
-- [Traits over Polymorphism (Run-Time)](./traits-rt.md)
+- [OOP: Overrated](./oop.md)
+    - [Enums over Polymorphism](./enums.md)
+    - [Traits over Polymorphism (Run-Time)](./traits-rt.md)
 - [Traits over Polymorphism (Compile-Time)](./traits-compile.md)
-
-# Functions
-
-- [Overloading: Overrated](./overloading.md)
-- [References vs Pointers vs Returning](./signatures.md)
 
 # Legacy
 
-- [Headers](./headers.md)
 - [Syntax](./syntax.md)
+- [Function Signatures](./signatures.md)
+- [Overloading: Overrated](./overloading.md)
+- [Headers](./headers.md)
 - [Pointers: Raw or Smart](./ptrs.md)
 - [Arrays](./arrays.md)
