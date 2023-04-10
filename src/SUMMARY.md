@@ -1,7 +1,6 @@
 # Summary
 
 [Introduction](./intro.md)
-[Common Complaints about Rust](./complaints.md)
 
 # Memory
 
@@ -12,3 +11,8 @@
 # Safety
 
 - [Safety and Performance](./safety.md)
+
+# Appendices
+
+- [Common Complaints about Rust](./complaints.md)
+- [Response to Dr. Stroustrup's Memory Safety Comments](./stroustrup.md)

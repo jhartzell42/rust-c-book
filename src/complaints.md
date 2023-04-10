@@ -52,15 +52,41 @@ subreddit. My post was taken down by moderators as irrelevant to C++,
 but how could you be more relevant than a thorough critique?
 
 > Rust will be in the same place as C++ in 40 years
+> Rust will end up as convoluted as C++ is now.
 
-First, if there needs to be a new systems language in another 30
-or 40 years that reboots Rust like Rust is rebooting C++, I don't
-see that as a failure. I certainly don't see that as a reason
-not to use Rust now.
+This might just be true, but I don't get why it's used as an anti-Rust
+argument. If there needs to be a new systems language in another 30 or
+40 years that reboots Rust like Rust is rebooting C++, I don't see that
+as a failure. I certainly don't see that as a reason not to use Rust now.
+And when the new programming language comes around to out-Rust Rust, I'll
+advocate switching to that too.
 
-And maybe Rust will be in 40 years as messy as C++ is now. Probably C++
-will be even messier by then. Maybe C++ will clean up certain problems;
-probably Rust will help spur it to do so by means of competition.
+That would just mean that programming languages are subject to entropy
+and obsolescence like everything else. And in that case, C++ will just
+continue to get worse in the meantime too, so Rust will be better than C++
+the entire time. If all programming languages accrue cruft as they age,
+in what world is that a reason to use the cruftier programming language?
+Isn't that a reason to use the newest appropriate programming language?
+
+Most Rustaceans are not, despite the stereotype, treating Rust as some
+apocalyptic, messianic programming language to end all programming
+languages.  The goal isn't to have an eternally good programming
+languages; programming languages are tools. We switch to better tools
+when it is practical to do so.  The question is: What should new projects
+be written in now?  When a rewrite is called for (as it sometimes is),
+should it include a new programming language now that there is a viable
+alternative?
+
+I suspect that many making this argument are including an unstated
+assumption -- that C++'s cruft is actually a sign of its maturity, and
+fitness for production use. Alternatively, and a little more charitably,
+they might assume that Rust isn't ready for production use yet, and by
+the time it is, it will be just as crufty as C++, perhaps converging to
+the same level of cruft. But while there are a few categories where Rust
+lags C++, they are mistaken in the big picture. For the vast majority
+of C++ projects, Rust is already a better option for if the project had
+to be rewritten from scratch (a big "if," but irrelevant to the merits
+of the programming languages).
 
 But also: Maybe Rust will be able to avoid some of C++'s mistakes;
 it's certainly trying to.

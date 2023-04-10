@@ -1,9 +1,7 @@
 Plan:
+* Copy in OOP blog posts
+    * Revise
 * Reconcile two versions of intro
-* Copy in blog posts
-    * Include OOP posts
-    * Include entries/map API section
-    * Don't include hello-rust yet
 * Revise blog posts that were literally copied in
     * Try to make it a little more coherent
     * Replace references to blog series with references to book :-)
