@@ -1,7 +1,7 @@
 Plan:
+* Add Google Analytics (theme/head.hbs)
 * Copy in OOP blog posts
     * Revise
-* Add Google Analytics (theme/head.hbs)
 * Post on website
 * Write announcement blog post
 * Blog and then add (eventually):
