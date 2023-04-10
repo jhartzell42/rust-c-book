@@ -3,7 +3,7 @@
 I don't want you to think of me as a hater of C++. In spite of the fact
 that this book itself is a comparison between Rust and C++ in Rust's
 favor, I am very aware that Rust as it exists would never have been
-possible without C++.  Like all new technology and science, Rust stands
+possible without C++. Like all new technology and science, Rust stands
 on the shoulders of giants, and many of those giants contributed to C++.
 
 And this makes sense if you think about it. Rust and C++ have very similar
@@ -183,7 +183,7 @@ was all RAII did, it wouldn't be that interesting.
 
 For example, take this C-style (no RAII) code:
 
-```
+```c++
 void print_int_little_endian_decimal(int foo) {
     // Little endian decimal print of `foo`
     // i.e. backwards from how we normally write decimal numbers
@@ -213,7 +213,7 @@ Just using RAII (and `unique_ptr`s, which are an essential part of
 the RAII model), but using no other features of C++, we get this very
 unidiomatic and unimpressive version:
 
-```
+```c++
 void print_int_little_endian_decimal(int foo) {
     std::unique_ptr<char[]> buffer{new char[11]};
     for(char *it = &buffer[0]; it < &buffer[10]; ++it) {
@@ -254,7 +254,7 @@ We can combine RAII with other features of C++ to get this more
 idiomatic code, with the first `do`-`while` loop I've written
 in years:
 
-```
+```c++
 void print_int_little_endian_decimal(int foo) {
     std::string res;
     do {
@@ -278,7 +278,7 @@ complicated trees of complicated heap allocations. In many cases, C++
 (and Rust) will write your destructors for you, even for complicated
 types like this:
 
-```
+```c++
 struct PersonRecord {
     std::string name;
     uint64_t salary;
@@ -338,7 +338,7 @@ This becomes apparent if we try to refactor our
 big-endian integer decimalizer to allow us to do other things with
 the resultant string besides print it:
 
-```
+```c++
 std::string render_int_little_endian_decimal(int foo) {
     std::string res;
     do {
@@ -388,7 +388,7 @@ When a function takes an `int` argument, as in
 Similarly, if we take a `std::string` argument without additional
 annotation, C++ will also make a copy:
 
-```
+```c++
 int parse_int_le(std::string foo) {
     int res = 0;
     int pos = 1;
@@ -517,7 +517,7 @@ A moved-from object might stay the same, if no moving was done. It
 might also change in value, if the move caused an allocation
 (or other resource) to move into the new object. This forces
 C++ smart pointers to choose between movability and non-nullability --
-no moveable, nullable pointer is possible in C++. Nulls -- and the
+no moveable, non-nullable pointer is possible in C++. Nulls -- and the
 other "moved-from" empty collections that you get from C++ move
 semantics -- can then be referenced later on in the function,
 and though they must be "valid" values of the object, they are
@@ -572,7 +572,7 @@ In Rust, borrows are commonly introduced as a sort of an improvement on
 moves. Consider our example function that parses a string to an `int`,
 here implemented in C++ with copies:
 
-```
+```c++
 int parse_int_le(std::string foo) {
     int res = 0;
     int pos = 1;
@@ -587,7 +587,7 @@ int parse_int_le(std::string foo) {
 Here is a Rust version, with moves, so that the function consumes
 the string:
 
-```
+```rust
 use std::env::args;
 
 fn parse_int_le(foo: String) -> u32 {
@@ -613,7 +613,7 @@ can consume the string, so it doesn't have multiple owners.
 But `parse_int_le` doesn't need to own the string. In fact, it could
 be written so that it can give the string back when it's done:
 
-```
+```rust
 fn parse_int_le(foo: String) -> (u32, String) {
     let mut res = 0;
     let mut pos = 1;
@@ -651,7 +651,7 @@ parameter in `parse_int_le`, with an actual borrow, using
 `&str`, the special borrowed form of `String` that also allows
 slices:
 
-```
+```rust
 use std::env::args;
 
 fn parse_int_le(foo: &str) -> u32 {
