@@ -28,7 +28,7 @@ especially for people like me who came from functional programming, but
 to be honest, closures were just syntactic sugar for existing patterns
 of boilerplate that could be readily used to write function objects.
 
-But the real excitement at the time, certainly the one my colleagues
+Indeed, the real excitement at the time, certainly the one my colleagues
 and I were most excited about, was move semantics. To explain why this
 feature was so important, I'll need to talk a little about the C++
 object model, and the problem that move semantics exist to solve.
@@ -41,7 +41,7 @@ of type `int` only take up a few bytes of storage, and so copying them
 has always been very cheap. When you assign an `int` from one variable
 to another, it is copied. When you pass it to a function, it is copied:
 
-```
+```c++
 int print_i(int arg) {
     arg += 3;
     std::cout << arg << std::endl;
@@ -63,7 +63,7 @@ In the C++ version of object-oriented programming, it was decided that
 values of custom, user-defined types would have the same semantics, that
 they would work the same way as the primitive types. So for C++ strings:
 
-```
+```c++
 std::string foo = "foo";
 std::string bar = foo; // copy (!)
 foo += "__";
@@ -95,7 +95,7 @@ reference in the same situation. In practice, this dilutes the benefit
 of treating them the same, as in practice the function signatures
 are different if we don't want to trigger spurious expensive deep copies:
 
-```
+```c++
 void foo(int bar);
 void foo(const std::string &bar);
 ```
@@ -104,7 +104,7 @@ If you instead declare the function `foo` like you would with an `int`,
 you get a poorly performing deep copy. The default is something you
 probably don't want:
 
-```
+```c++
 void foo(std::string bar);
 void foo2(const std::string &bar);
 `
@@ -122,7 +122,7 @@ passed around freely, while requiring an explicit call to `clone()`
 for types like `String` so we know we're paying the cost of a deep copy,
 or else an explicit indication that we're passing by reference:
 
-```
+```rust
 fn foo(bar: String) {
     // Implementation
 }
@@ -148,7 +148,7 @@ to stay alive longer. Taking by reference is not an option when
 the object (whether `int` or `std::string`) is being added to a vector
 that will outlive the original object:
 
-```
+```c++
 std::vector<int> vi;
 std::vector<std::string> vs;
 {
@@ -221,7 +221,7 @@ provided by C++ to encapsulate and automatically manage memory, RAII and
 
 Consider this snippet of code:
 
-```
+```c++
 std::vector<std::string> vec;
 { // This might take place inside another function
   // Using local block scope for simplicity
@@ -240,7 +240,7 @@ have not done a copy, just to free the original allocation. We would
 have simply put the pointer into the vector. We would then have been
 responsible for freeing all the allocations -- once -- when we're done:
 
-```
+```c++
 std::vector<char *> vec;
 {
     // strdup, a POSIX call, makes a new allocation and copies a
@@ -248,6 +248,13 @@ std::vector<char *> vec;
     // on the heap. We will assume we have a reason to store it
     // on the heap -- perhaps we did more manipulation in the
     // real application to generate the string.
+
+    // The allocation is necessary to be the direct equivalent of
+    // `vec.push_back("Hi")` or even `vec.emplace_back("Hi")` for
+    // a `std::vector<std::string>, because that data structure has
+    // the invariant that all strings in the vector must have their
+    // own heap allocation (assuming no small string optimization,
+    // which many strings are ineligible for).
 
     char *foo = strdup("Hi!");
     vec.push_back(foo);
@@ -268,9 +275,9 @@ for (char *c: vec) {
 The copy version of the C++ code instead does -- after de-sugaring the
 RAII and value semantics and inlining -- something that no programmer
 would ever write manually, something equivalent to this (the vector is
-left in object-oriented notation for readability):
+left in OOP notation for readability):
 
-```
+```c++
 std::vector<char *> vec;
 {
     char *foo = strdup("Hi");
@@ -369,7 +376,7 @@ run-time decision as to whether to deallocate or not.
 The more C-style post-inlining code for our example would then look
 something like this:
 
-```
+```c++
 std::vector<char *> vec;
 {
     char *foo = strdup("Hi!");
@@ -426,7 +433,7 @@ For heap allocations, it is made relatively easy, but the implementor
 of the class is still responsible for re-setting the original object.
 In my example, the move constructor reads:
 
-```
+```c++
 string(string &&other) noexcept {
     m_len = other.m_len;
     m_str = other.m_str;
@@ -507,7 +514,7 @@ To explain what I mean, see the definition he then gives for moving:
 
 > In C++, copying or moving from an object `a` to an object `b` sets `b` to
 > `a`’s original value. The only difference is that copying from `a` won’t
-> change `a`, but moving from a might.
+> change `a`, but moving from `a` might.
 
 This is a fair statement of C++'s move semantics as defined. But it has
 a disconnect with the goals.
@@ -668,7 +675,7 @@ string, the programmer might write a
 [program](/string_example/split.cpp) that relies on the string
 being empty:
 
-```
+```c++
 std::vector<std::string>
 split_into_chunks(const std::string &in) {
     int count = 0;
@@ -774,7 +781,7 @@ implement the special `Copy` trait, because for these types, copying
 is cheap, and is the default way to pass to functions or to handle
 assignments:
 
-```
+```rust
 fn foo(bar: i32) {
     // Implementation
 }
@@ -791,7 +798,7 @@ variable's lifetime ends early. The move replaces the destructor call
 at the end of the block, at compile time, which means it's a compile
 time error to write the equivalent code for `String`:
 
-```
+```rust
 fn foo(bar: String) {
     // Implementation
 }
@@ -819,7 +826,7 @@ and in Rust the programming language is designed accordingly.
 If you want a deep copy, you can always explicitly ask for it with
 `.clone()`:
 
-```
+```rust
 fn foo(bar: String) {
     // Implementation
 }
