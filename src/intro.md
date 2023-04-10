@@ -9,16 +9,16 @@ a stereotype that is mostly untrue, but whose existence and occasional
 true examples shows the intensity of the debate. But a lot of Rust's
 criticism comes specifically from C++ programmers, and correspondingly
 a lot of Rustaceans' criticisms of other programming languages is
-directed specifically at C++, including [mine](/tags/rust-vs-c++/). Even
+directed specifically at C++ (including of course in this book). Even
 the creator of C++, while not mentioning it by name, [entered the
 fray](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2739r0.pdf)
-(and along with other Rustaceans, [I
-responded](/posts/stroustrup-response/)).
+(and along with other Rustaceans, I responded, and my response is
+included in the appendices).
 
 There's a good reason for this particular rivalry. While usable in other
 domains, Rust is strongest where C++ has hitherto been unopposed: as a
 high-level systems programming language. Many of Rust's greatest strengths
-are [directly based off of ideas originated in C++](/posts/raii/). And
+are directly based off of ideas originated in C++, such as RAII. And
 Rust has, in many ways, the same goals that C++ has.
 
 Specifically, in this book I shall argue that Rust has the exact same
@@ -186,7 +186,7 @@ The only features C++ rejects out of hand are those that do not jive
 with zero-cost abstraction.  This is why garbage-collection is not
 offered in C++ (though it is still possible to implement manually) --
 it cannot be offered in a zero-cost way. However, C++'s alternative to
-garbage collection, namely [RAII](/posts/raii/), continues to become
+garbage collection, namely RAII, continues to become
 more effective as new features like move semantics and `std::unique_ptr`
 were added, to the extent that in modern C++, it would be unimaginable
 not to have those features, and they have become essential to C++'s
@@ -209,7 +209,6 @@ C, and is harder to get wrong. It's not quite as straight-forward as
 in a garbage-collected language, but it has many of the benefits of
 abstraction: You can't just forget to call the destructor.
 
-
 But! From the compiled binary, modulo such nit-picky accidents as symbol
 names, you wouldn't be able to tell it was written in C++ instead of C!
 The abstraction was resolved and disappeared at compile-time.
@@ -227,7 +226,7 @@ programming language where the compiled binary looks like something
 someone could have written in C, but where the programmer actually had
 a much easier task. And I will argue that Rust does a better job.
 
-### OOP and Safety
+# Wrinkles: OOP and Safety
 
 There's a few wrinkles in this though, a few featuers in either programming
 language that seem to detract from this goal, to undermine the idea
@@ -239,13 +238,13 @@ of bounds. What is "safety," and can Rust really be said to be interested
 in minimizing the cost of abstractions if it's also trying to achieve
 safety?
 
-I know these seem like wildly unrelated issues, but I think they're
-actually connected.  Both C++ and Rust are trying to have their cake
-and eat it too. They're trying to provide all of the conveniences of
-a modern high-level programming language, while outputting binaries
-equivalent to those a C programmer would make.
+I know these seem like wildly unrelated issues, but they're actually
+connected. Both C++ and Rust are trying to have their cake and eat
+it too. They're trying to provide all of the conveniences of a modern
+high-level programming language, while outputting binaries equivalent
+to those a C programmer would make.
 
-But safety and OOP actually do have non-zero overhead: OOP has virtual
+But safety and OOP actually do have non-zero overhead. OOP has virtual
 functions, preventing inlining and other optimizations and requiring
 indirect function calls. Safety, for its part, requires bounds checking,
 an obvious non-zero overhead. And in Rust, it constrains heap usage
