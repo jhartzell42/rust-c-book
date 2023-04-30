@@ -228,7 +228,7 @@ a much easier task. And I will argue that Rust does a better job.
 
 # Wrinkles: OOP and Safety
 
-There's a few wrinkles in this though, a few featuers in either programming
+There's a few wrinkles in this though, a few features in either programming
 language that seem to detract from this goal, to undermine the idea
 that this is truly a focus for them at all. On the C++ side, we have
 OOP and virtual methods, which are often less performant than the
