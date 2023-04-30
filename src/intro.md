@@ -531,7 +531,7 @@ Java and C# were efforts to extract this smaller and cleaner language
 other bits that they considered the "cruft." And for a substantial
 slice of C++ programmers, who didn't need control of memory and
 could afford garbage collection, this is exactly what the doctor
-ordered: Many use cases of C# an Java today would've previously
+ordered: Many use cases of C# and Java today would've previously
 been filled by C++.
 
 Remember, C++ used to be a general-purpose programming language. Now, it's
