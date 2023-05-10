@@ -228,7 +228,7 @@ a much easier task. And I will argue that Rust does a better job.
 
 # Wrinkles: OOP and Safety
 
-There's a few wrinkles in this though, a few featuers in either programming
+There's a few wrinkles in this though, a few features in either programming
 language that seem to detract from this goal, to undermine the idea
 that this is truly a focus for them at all. On the C++ side, we have
 OOP and virtual methods, which are often less performant than the
@@ -531,7 +531,7 @@ Java and C# were efforts to extract this smaller and cleaner language
 other bits that they considered the "cruft." And for a substantial
 slice of C++ programmers, who didn't need control of memory and
 could afford garbage collection, this is exactly what the doctor
-ordered: Many use cases of C# an Java today would've previously
+ordered: Many use cases of C# and Java today would've previously
 been filled by C++.
 
 Remember, C++ used to be a general-purpose programming language. Now, it's
