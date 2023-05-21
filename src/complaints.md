@@ -197,8 +197,8 @@ the time, as opposed to all the time in C++.
 > Rust is taking the easy way out. Or: You can do C++ well, you just
 > have to work harder at it, so there's no point to Rust.
 
-I do think people regularly underestimate their ability to write safe C++.
-Other people underestimate how much performance they're giving up on by
+I do think people regularly overestimate their ability to write safe C++.
+Other people overestimate how much performance they're giving up on by
 making sure they're confident their C++ is safe.
 
 But even if you have put in the work to be good at writing C++ safely,
