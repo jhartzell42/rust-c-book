@@ -165,20 +165,15 @@ when finally the hierarcy decided that "valgrind" was something we
 might want to be able to use in the future.
 
 And a lot of those undefined behaviors were ticking time bombs.
-Certainly, this codebase had its issues. A friend of mine took days to
-find a bug where a pointer had a value of 7. I don't mean 7 elements into
-some array, not 7 of the relatively wide pointer type, not a convenient,
-testable-for `NULL`, value. No, none of that: The pointer's value was
-exactly `0x7`.
-
-I've had memory corruption issues where I poured over every line of code
-that I wrote, over and over again, finding nothing. Ultimately, I learned
-that the issue was in framework code -- code written by my boss's boss.
-The code was untested, and written extremely poorly, and had rotted, so
-that it didn't work at all. In Rust, I might have had some idea that
-my code -- which in Rust would have all been able to be "safe" --
-couldn't possibly be the source of the problem. Maybe my humble assumption
-that my code was to blame would be a little less tenable.
+Certainly, this codebase had its issues.  I've had memory corruption
+issues where I poured over every line of code that I wrote, over and
+over again, finding nothing. Ultimately, I learned that the issue was in
+framework code -- code written by my boss's boss.  The code was untested,
+and written extremely poorly, and had rotted, so that it didn't work
+at all. In Rust, I might have had some idea that my code -- which in
+Rust would have all been able to be "safe" -- couldn't possibly be the
+source of the problem. Maybe my humble assumption that my code was to
+blame would be a little less tenable.
 
 If I wanted a language that was always safe, at the time I knew Java
 or Python existed. Some companies even do finance in Java, for exactly
